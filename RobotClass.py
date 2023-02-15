@@ -18,3 +18,13 @@ class Robot:
 
     def hablar(self):
         print(f"{self.ID} esta tratando de comunicarte algo por {self.comms}")
+    
+    def sensores(self):
+        try:
+            mag = self.distanciaActual[0] + self.distanciaActual[1]
+            print(f"Ha detectado un objeto a {mag}")
+        except:
+            print("Revisa la distancia ingresada")
+
+    def __str__(self):
+        return f"\nEste es {self.ID}\n{self.tipo}\n{self.color}\n{self.tamano}\n{self.comms}"
